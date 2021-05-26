@@ -41,9 +41,29 @@ def index():
 @app.route('/predict')
 def predict():
 
-    return ('prediction from user input here')
-# use sqllite to access station names and latlongs 
+    # return ('prediction from user input here')
+# use database to access station names and latlongs ->station route does this
+    # /station returns list of dicts, each dict is station/elevation/lat/long
+    resultproxy = engine.execute('SELECT * FROM station_table')
+
+    d, a = {}, []
+    for rowproxy in resultproxy:
+        # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+        for column, value in rowproxy.items():
+            # build up the dictionary
+            d ={**d, **{column: value}}
+        a.append(d)
+    # print(a)
+    
+    for each_dict in a:
+        # print(each_dict['station_name'])
+        # run model with input date (comes from form)
+        # store output in shape (dict) along with station 
+
+
+    return ('done')
     # grab input from form (or have user go to endpoint on their own)
+    # input = 100 (day of year)
 
     # loop over all possible stations, running our model on that input and each station
     # for each_station in lat_lon:
@@ -97,17 +117,6 @@ def stations():
         a.append(d)
     return jsonify(a)
 
-    # lat_lon=engine.execute('SELECT DISTINCT lat, lon FROM snow_weather').fetchall()
-
-    # stations=[]
-    # for each_station in station_name_array:
-    #     station=each_station[0]
-    #     stations.append(station)
-    # return jsonify({"stations":stations})
-    # test_array=engine.execute('SELECT * FROM snow_weather LIMIT 5').fetchall() #station_table 
-    # # results = json.dumps({test_array})
-    # for each_result in test_array:
-    # return results
 
 if __name__=='__main__': 
 	app.run()
