@@ -63,7 +63,9 @@ def predict():
 
     return ('done')
     # grab input from form (or have user go to endpoint on their own)
-    # input = 100 (day of year)
+    
+    # input = features_list=['Date','Snow Depth (in) Start of Day Values','Air Temperature Observed (degF) Start of Day Values','Snow Water Equivalent (in) Start of Day Values']
+    # needs to be in knn.predict([[array]])
 
     # loop over all possible stations, running our model on that input and each station
     # for each_station in lat_lon:
