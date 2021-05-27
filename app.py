@@ -3,6 +3,13 @@ import sqlalchemy
 from sqlalchemy import create_engine
 import json
 from datetime import date
+import pickle
+
+# load the previously persisted ML assets
+with open('static/py/final_modle.sav', 'rb') as f: 
+	knn=pickle.load(f)
+with open('static/py/input_scaler.sav', 'rb') as f: 
+	scaler=pickle.load(f)
 
 
 db_connection_string = "postgres://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
@@ -37,20 +44,44 @@ def predict():
     # return ('prediction from user input here')
 # use database to access station names and latlongs ->station route does this
     # /station returns list of dicts, each dict is station/elevation/lat/long
-    resultproxy = engine.execute('SELECT * FROM station_table')
+    resultproxy = engine.execute('SELECT * FROM station_means_table')
+    # date = day_of_year
 
     d, a = {}, []
+    # input_array=[]
     for rowproxy in resultproxy:
-        # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-        print(rowproxy['station_name'])
-        sn=rowproxy['station_name']
+        # print(rowproxy['dates'])
+        if rowproxy['dates']==int(day_of_year):
+            # print('found it')
+            input_array=[]
+            # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+            # print(rowproxy['station_name'])
+            sn=rowproxy['station_name']
+            # can add all other variables here. 
+            sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
+            # print(f'snow depth {sd_sod}')
+            air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
+            # print(f'air temp {air_temp}')
+            swq_sod= rowproxy['snow_water_equiv_start_of_day']
+            # print(f'snow water {swq_sod}')
+            input_array.append(day_of_year)
+            input_array.append(sd_sod)
+            input_array.append(air_temp)
+            input_array.append(swq_sod)
+            # input_array.append(sn)
+            
+            
+            
+
+            # print(input_array)
+            # feed variables through ml model
+
+            scaled_input=scaler.transform([input_array])
+            print(scaled_input)
+            # output=knn.predict(scaled_input)
         
-        # can add all other variables here. 
-        # date = day_of_year
-        # 'Snow Depth (in) Start of Day Values'
-        # 'Air Temperature Observed (degF) Start of Day Values'
-        # 'Snow Water Equivalent (in) Start of Day Values'
-        # feed variables through ml model
+
+        
         # if snow, 
 
 
