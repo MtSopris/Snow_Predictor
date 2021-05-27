@@ -47,39 +47,46 @@ def predict():
     resultproxy = engine.execute('SELECT * FROM station_means_table')
     # date = day_of_year
 
-    d, a = {}, []
+    # d, a = {}, []
     # input_array=[]
     for rowproxy in resultproxy:
         # print(rowproxy['dates'])
-        if rowproxy['dates']==int(day_of_year):
-            # print('found it')
-            input_array=[]
-            # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-            # print(rowproxy['station_name'])
-            sn=rowproxy['station_name']
-            # can add all other variables here. 
-            sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
-            # print(f'snow depth {sd_sod}')
-            air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
-            # print(f'air temp {air_temp}')
-            swq_sod= rowproxy['snow_water_equiv_start_of_day']
-            # print(f'snow water {swq_sod}')
-            input_array.append(day_of_year)
-            input_array.append(sd_sod)
-            input_array.append(air_temp)
-            input_array.append(swq_sod)
-            # input_array.append(sn)
-            
-            
-            
+        # if rowproxy['station_name']=='Buffalo Creek'
+            if rowproxy['dates']==int(day_of_year):
+                # print('found it')
+                input_array=[]
+                # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+                # print(rowproxy['station_name'])
+                sn=rowproxy['station_name']
+                # can add all other variables here. 
+                sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
+                # print(f'snow depth {sd_sod}')
+                air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
+                # print(f'air temp {air_temp}')
+                swq_sod= rowproxy['snow_water_equiv_start_of_day']
+                # print(f'snow water {swq_sod}')
+                input_array.append(int(day_of_year))
+                # input_array.append(sd_sod)
+                input_array.append(air_temp)
+                input_array.append(swq_sod)
+                # input_array.append(sn)
+                # print(input_array)
 
-            # print(input_array)
-            # feed variables through ml model
+                # feed variables through ml model
 
-            scaled_input=scaler.transform([input_array])
-            print(scaled_input)
-            # output=knn.predict(scaled_input)
-        
+                scaled_input=scaler.transform([input_array])
+                # print(scaled_input)
+                output=knn.predict(scaled_input)
+                print(f'station:{sn} , input: {input_array}, output:{output}')
+                
+                # array of dictionaries: 
+                # {station_name: Apishapa,
+                #       properties: {output: ,
+                                    # lat: ,
+                                    # long: ,
+                                    # elevation: }
+                # }
+                
 
         
         # if snow, 
