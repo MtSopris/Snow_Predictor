@@ -1,26 +1,20 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import json
+from datetime import date, datetime
+import pickle
 
-# sqlalchemy
-# can upload information with credentials - I can access this db with credentials, any data we put into db is now available into 
+# load the previously persisted ML assets
+with open('static/py/final_modle.sav', 'rb') as f: 
+	knn=pickle.load(f)
+with open('static/py/input_scaler.sav', 'rb') as f: 
+	scaler=pickle.load(f)
 
-# heroku
 
 db_connection_string = "postgres://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
 engine = create_engine(db_connection_string)
-station_name_array=engine.execute('SELECT station_name FROM station_table').fetchall()
-lat_lon=engine.execute('SELECT station_table.latitude, station_table.longitude FROM station_table').fetchall()
 
-# stations=[]
-# for each_station in station_name_array:
-#     station=each_station[0]
-#     stations.append(station)
-
-# print(lat_lon)
 
 app=Flask(__name__)
 
@@ -28,96 +22,75 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    # stations=[]
-    # for each_station in station_name_array:
-    #     station=each_station[0]
-    #     stations.append(station)
-    # print(f'first lat_lon {lat_lon[0]}')
-    # print(f'first station {stations[0]}')
-    return('Welcome to the home page')
+
+    return render_template('form.html')
+    # return render_template('index.html') index.html has dropdown that takes you to form 
 
 
-
-@app.route('/predict')
+@app.route('/predict', methods=['POST'])
 def predict():
-
-    # return ('prediction from user input here')
-# use database to access station names and latlongs ->station route does this
-    # /station returns list of dicts, each dict is station/elevation/lat/long
-    resultproxy = engine.execute('SELECT * FROM station_table')
-
-    d, a = {}, []
-    for rowproxy in resultproxy:
-        # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-        for column, value in rowproxy.items():
-            # build up the dictionary
-            d ={**d, **{column: value}}
-        a.append(d)
-    # print(a)
+    input_date=request.form['trip-start']
+    # now = datetime.now()
+    # current_time=now.strftime("%H:%M:%S")
+    #get time.now
+    # get zipcode
     
-    for each_dict in a:
-        # print(each_dict['station_name'])
-        # run model with input date (comes from form)
-        # store output in shape (dict) along with station 
-
-
-    return ('done')
-    # grab input from form (or have user go to endpoint on their own)
+    # inserting click data into db
+    # engine.execute(f'INSERT into table VALUES ({input_date}, {time.now()},{zipcode})
     
-    # input = features_list=['Date','Snow Depth (in) Start of Day Values','Air Temperature Observed (degF) Start of Day Values','Snow Water Equivalent (in) Start of Day Values']
-    # needs to be in knn.predict([[array]])
+    # print(input_date)
+    yyyy, mm, dd = input_date.split("-")
+    # print(yyyy)
+    date_val = date(int(yyyy), int(mm), int(dd))
+    day_of_year = date_val.strftime('%j')
+    # print(day_of_year)
 
-    # loop over all possible stations, running our model on that input and each station
-    # for each_station in lat_lon:
-        # run model with input date (comes from form)
+    resultproxy = engine.execute('SELECT * FROM station_means_table')
 
-    # store output in shape (dict) along with station 
-    # could optionally have list of lat longs that is stored here as well
-
-
-
-
-    # loop through all possible lat longs in model, 
-        # put latlongs into one value, as an array
-        # code in model as onehot encoding
-
-    # input_date
-        # for each_stion in array of stations:
-        #   plug into model with input date 
-            # snowfall=intercept+date*b1+station*b2
-            # b1, b2, respective weights of variables
-
-    # here will be dictionary of the output coming from ml model 
-    # stationnames 
-    # latlongs with corresponding date and snowfall
-
-    # final dictionary
-    # what do we want final dict look like? -> how does leaflet want a heatmap?
-    # dummy_output={
-        # date
-        # station_name: ,
-        # lat_lon: ,
-        #  elevation: ,
-        # snowfall ,
-        # date?
-
-    # }
-    # return jsonify({'input'})
-
-@app.route('/stations')
-def stations():
-
-
-    resultproxy = engine.execute('SELECT * FROM station_table')
-
-    d, a = {}, []
+    output_array=[]
     for rowproxy in resultproxy:
-        # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-        for column, value in rowproxy.items():
-            # build up the dictionary
-            d ={**d, **{column: value}}
-        a.append(d)
-    return jsonify(a)
+        if rowproxy['dates']==int(day_of_year):
+            # print('found it')
+            input_array=[]
+            # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+            # print(rowproxy['station_name'])
+            station_name=rowproxy['station_name']
+            lat=rowproxy['lat']
+            lon=rowproxy['long']
+            elevation=rowproxy['elevation']
+
+            # can add all other variables here. 
+            sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
+            # print(f'snow depth {sd_sod}')
+            air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
+            # print(f'air temp {air_temp}')
+            swq_sod= rowproxy['snow_water_equiv_start_of_day']
+            # print(f'snow water {swq_sod}')
+            input_array.append(int(day_of_year))
+            # input_array.append(sd_sod)
+            input_array.append(air_temp)
+            input_array.append(swq_sod)
+
+            # print(input_array)
+            # feed variables through ml model
+
+            scaled_input=scaler.transform([input_array])
+            # print(scaled_input)
+            output=knn.predict(scaled_input)
+            # print(f'station:{sn} , input: {input_array}, output:{output}')
+
+            station_dict = {"station_name":station_name,
+                            "predicted_snow": output[0], 
+                            "lat": lat,
+                            "lon": lon,
+                            "elevation": elevation}
+
+            output_array.append(station_dict)
+
+    # print(output_array)
+    # return jsonify(['hi'])
+    return jsonify(output_array)
+
 
 
 if __name__=='__main__': 
