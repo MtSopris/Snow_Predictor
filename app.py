@@ -23,13 +23,18 @@ app=Flask(__name__)
 @app.route('/')
 def index():
 
-    return render_template('form.html')
+    return render_template('index.html')
     # return render_template('index.html') index.html has dropdown that takes you to form 
 
 
 @app.route('/predict', methods=['POST'])
 def predict():
     input_date=request.form['trip-start']
+    # input_month=request.args.get('select1') #form['select1']
+    # input_day=request.form['select2']
+    # print(input_month)
+    # print(input_day)
+
     # now = datetime.now()
     # current_time=now.strftime("%H:%M:%S")
     #get time.now
