@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import sqlalchemy
 from sqlalchemy import create_engine
 import json
-from datetime import date
+from datetime import date, datetime
 import pickle
 
 # load the previously persisted ML assets
@@ -27,105 +27,70 @@ def index():
     # return render_template('index.html') index.html has dropdown that takes you to form 
 
 
-
-
 @app.route('/predict', methods=['POST'])
 def predict():
     input_date=request.form['trip-start']
-    print(input_date)
+    # now = datetime.now()
+    # current_time=now.strftime("%H:%M:%S")
+    #get time.now
+    # get zipcode
+    
+    # inserting click data into db
+    # engine.execute(f'INSERT into table VALUES ({input_date}, {time.now()},{zipcode})
+    
+    # print(input_date)
     yyyy, mm, dd = input_date.split("-")
-    print(yyyy)
+    # print(yyyy)
     date_val = date(int(yyyy), int(mm), int(dd))
     day_of_year = date_val.strftime('%j')
-    print(day_of_year)
+    # print(day_of_year)
 
-
-    # with open (csvfile, 'w')
-    # return ('prediction from user input here')
-# use database to access station names and latlongs ->station route does this
-    # /station returns list of dicts, each dict is station/elevation/lat/long
     resultproxy = engine.execute('SELECT * FROM station_means_table')
-    # date = day_of_year
 
-    # d, a = {}, []
-    # input_array=[]
+    output_array=[]
     for rowproxy in resultproxy:
-        # print(rowproxy['dates'])
-        # if rowproxy['station_name']=='Buffalo Creek'
-            if rowproxy['dates']==int(day_of_year):
-                # print('found it')
-                input_array=[]
-                # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-                # print(rowproxy['station_name'])
-                sn=rowproxy['station_name']
-                # can add all other variables here. 
-                sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
-                # print(f'snow depth {sd_sod}')
-                air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
-                # print(f'air temp {air_temp}')
-                swq_sod= rowproxy['snow_water_equiv_start_of_day']
-                # print(f'snow water {swq_sod}')
-                input_array.append(int(day_of_year))
-                # input_array.append(sd_sod)
-                input_array.append(air_temp)
-                input_array.append(swq_sod)
-                # input_array.append(sn)
-                # print(input_array)
+        if rowproxy['dates']==int(day_of_year):
+            # print('found it')
+            input_array=[]
+            # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+            # print(rowproxy['station_name'])
+            station_name=rowproxy['station_name']
+            lat=rowproxy['lat']
+            lon=rowproxy['long']
+            elevation=rowproxy['elevation']
 
-                # feed variables through ml model
+            # can add all other variables here. 
+            sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
+            # print(f'snow depth {sd_sod}')
+            air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
+            # print(f'air temp {air_temp}')
+            swq_sod= rowproxy['snow_water_equiv_start_of_day']
+            # print(f'snow water {swq_sod}')
+            input_array.append(int(day_of_year))
+            # input_array.append(sd_sod)
+            input_array.append(air_temp)
+            input_array.append(swq_sod)
 
-                scaled_input=scaler.transform([input_array])
-                # print(scaled_input)
-                output=knn.predict(scaled_input)
-                print(f'station:{sn} , input: {input_array}, output:{output}')
-                
-                # array of dictionaries: 
-                # {station_name: Apishapa,
-                #       properties: {output: ,
-                                    # lat: ,
-                                    # long: ,
-                                    # elevation: }
-                # }
-                
+            # print(input_array)
+            # feed variables through ml model
 
-        
-        # if snow, 
+            scaled_input=scaler.transform([input_array])
+            # print(scaled_input)
+            output=knn.predict(scaled_input)
+            # print(f'station:{sn} , input: {input_array}, output:{output}')
 
+            station_dict = {"station_name":station_name,
+                            "predicted_snow": output[0], 
+                            "lat": lat,
+                            "lon": lon,
+                            "elevation": elevation}
 
-        # for column, value in rowproxy.items():
-        #     # check if snow with model 
-        #     # if yes, build up the dictionary with snow values
-        #     snow='yes'
-        #     if snow =='yes':
-        #         d ={**d, **{column: value}}
-        # a.append(d)
-        # write to output file
-    # print(a)
+            output_array.append(station_dict)
 
-    # save snow dictionary 
-    return render_template('form.html') # add the html that is linked to js and will display visuals
+    # print(output_array)
+    # return jsonify(['hi'])
+    return jsonify(output_array)
 
-    
-
-
-
-@app.route('/stations')
-def stations():
-
-
-    resultproxy = engine.execute('SELECT * FROM station_table')
-
-    d, a = {}, []
-    for rowproxy in resultproxy:
-        # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
-        for column, value in rowproxy.items():
-            # build up the dictionary
-            d ={**d, **{column: value}}
-        a.append(d)
-
-    # save to json file
-    return jsonify(a)
-    
 
 
 if __name__=='__main__': 
