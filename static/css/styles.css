@@ -1,7 +1,7 @@
 /*CSS styling*/
 body{
-	height: 1000px;
-    width: 100vw;
+	height: 2500px;
+  width: 100vw;
 	background-color: #5534eb;
 	background: -webkit-linear-gradient(rgba(209, 213, 224), rgba(55, 66, 97));
 }
@@ -24,7 +24,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 }
 */
 .w3content{
-	max-width:1400px
+  max-height: fit-content,
+	/* max-width: 2500px */
+  
 }
 
 .col-xs-6{
