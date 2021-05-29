@@ -3,7 +3,10 @@ drop table if exists user_info;
 create table user_info (
 	utc_now varchar,
 	input_date varchar,
-	zip_code varchar
+	zip_code varchar, 
+	dream varchar,
+	planned varchar, 
+	activity varchar
 );
 
 select * from user_info;

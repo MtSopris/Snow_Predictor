@@ -37,6 +37,9 @@ def predict():
     now = datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
     # get zipcode from form
     zip_code=request.form['zip_code']
+    dream=request.form['dream']
+    planned=request.form['planned']
+    activity=request.form['activity']
     # print(f'zip {zip_code}')
     # print(now)
     # print (input_date)
@@ -115,7 +118,10 @@ def predict():
     # print(output_array[0])
     return redirect("/", code=302)
 
-
+# @app.route("/deep", methods = ['GET', 'POST'])
+# def data_collection():
+    
+    
 
 if __name__=='__main__': 
 	app.run()

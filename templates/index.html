@@ -40,15 +40,29 @@
 <!-- dropdown code -->
 <div class="col-xs-6"> <!-- dropdown div -->
       <form action='/predict' method='POST'>
-    <input type="date" id="start" name="trip-start"
+    Trip Date:<input type="date" id="start" name="trip-start"
     value="2021-10-31"
-    min="2021-01-01" max="2022-12-31">
-
+    min="2021-01-01" max="2022-12-31" padding=5px>
     <!-- zipcode input option for database -->
-	Zip code: <input type="text" id="myText" name="zip_code">
+	  </br>
+	Your location (Zip code): <input type="text" id="myText" name="zip_code" padding=5px>
+	
+	
 
-    <input type="submit">
-    </form>
+    <!-- <input type="submit"> -->
+    <!-- </form> -->
+</br>
+	<div class="col-xs-6">
+		<form action="/data_collection" method="POST">
+		Dream Trip Destination: <input type="text" id="myText" name="dream" maxlength="30" padding=5px>
+		</br>
+		Planned Trip Destination: <input type="text" id="myText" name="planned" maxlength="30" padding=5px>
+		</br>
+		Planned Winter Activity: <input type="text" id="myText" name="activity" maxlength="30" padding=5px>
+	</br>
+	<input type="submit">
+	</form>
+	</div>
 </div> <!-- ends dropdown div -->
 </div> <!--end W3 div-->
 
