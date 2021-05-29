@@ -8,22 +8,28 @@ body{
 
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
-html,
-body,
-#map {
+
+/*.map {
   height: 80%;
   padding: 15;
   margin: 15;
   fill-outline-color:#000099;
-}
+}*/
 
-.center {
+/*.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 55%;
 }
-
+*/
 .w3content{
 	max-width:1400px
+}
+
+.col-xs-6{
+  font-family: "Raleway", sans-serif;
+  color:  #ffffff;
+  /*background-color:#c2c2d6;*/
+
 }

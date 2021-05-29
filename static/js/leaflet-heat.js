@@ -4,8 +4,8 @@
  https://github.com/mourner/simpleheat
 */
 !(function() {
-​
-​
+
+
   function t(i) {
     return this instanceof t ? (this._canvas = i = typeof i === "string" ? document.getElementById(i) : i, this._ctx = i.getContext("2d"), this._width = i.width, this._height = i.height, this._max = 1, void this.clear()) : new t(i);
   }t.prototype = { defaultRadius: 25,

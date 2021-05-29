@@ -12,7 +12,7 @@ with open('static/py/input_scaler.sav', 'rb') as f:
 	scaler=pickle.load(f)
 
 # connect to heroku database
-db_connection_string = "postgres://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
+db_connection_string = "postgresql://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
 
 # I was using a test db on my local machine to try inserting files
 # db_connection_string = 'postgresql://postgres:postgres@localhost:5432/testdb'

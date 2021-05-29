@@ -14,6 +14,10 @@
 	<link rel='stylesheet' href="../static/css/styles.css"/>
 	<!-- dropdown list -->
 	<link rel='stylesheet' href="../static/css/jquerydropdown.css"/>
+	<!-- Leaflet -->
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
 	<!--w3 layout-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -31,27 +35,47 @@
   <p> plan for powder <span class="w3-tag"></span></p>
 </header>
 <div class="w3-content"> <!--W3 div-->
+
 <!--heatmap-->
-<div class='map'> <!-- heatmap div -->
-	<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script> 
-	<script type="text/javascript" src="../static/js/leaflet-heat.js"></script>
-	<script type='text/javascript'src='../static/js/heatmap.js'></script>
-</div> <!-- end heatmap div -->
+<div class="container">
+	<div class = "row">
+		<div class = 'col-md-12'>
+			<div id='map' style="height: 400px;">
+			<div class='map'> <!-- heatmap div -->
+			<!-- ApiKey -->
+			<script type="text/javascript" src="../static/config/config.js"></script>
+				<!-- leaflet  -->
+			 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  		 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   		crossorigin=""></script>
+			<!-- JS -->
+			<script type='text/javascript'src='../static/js/heatmapv2.js'></script>
+			<!-- Leaflet heatmap plugin-->
+			<script type="text/javascript" src="../static/js/leaflet-heat.js"></script>
+		</div> <!-- end heatmap div -->
+	 </div>
+  </div>
+ </div>	
+</div>
 <!-- dropdown code -->
 <div class="col-xs-6"> <!-- dropdown div -->
-      <form action='/predict' method='POST'>
-    Trip Date:<input type="date" id="start" name="trip-start"
+    <form action='/predict' method='POST'>
+    <!-- Added header for date search -->
+    Powder Day Locator<input type="date" id="start" name="trip-start"
     value="2021-10-31"
-    min="2021-01-01" max="2022-12-31" padding=5px>
+    min="2021-01-01" max="2022-12-31">
+  </br>
+	<div class="col-xs-6">
     <!-- zipcode input option for database -->
-	  </br>
-	Your location (Zip code): <input type="text" id="myText" name="zip_code" padding=5px>
-	
-	
+	ZIP code: <input type="text" id="myText" name="zip_code">
 
-    <!-- <input type="submit"> -->
-    <!-- </form> -->
-</br>
+	  <!-- adding more to form submission - need to update table in db -->
+	  <!-- Should we change it to Dream CO and Planned CO - since focus is CO snow? -->
+	  <!-- Do we need two separate submit buttons for each form? -->
+
+	  <!-- <input type="submit"> -->
+    </form>
+	</br>
 	<div class="col-xs-6">
 		<form action="/data_collection" method="POST">
 		Dream Trip Destination: <input type="text" id="myText" name="dream" maxlength="30" padding=5px>
@@ -63,6 +87,9 @@
 	<input type="submit">
 	</form>
 	</div>
+<!-- 
+    <input type="submit">
+    </form> -->
 </div> <!-- ends dropdown div -->
 </div> <!--end W3 div-->
 
