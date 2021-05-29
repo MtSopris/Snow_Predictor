@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 import sqlalchemy
 from sqlalchemy import create_engine
 import json
@@ -11,8 +11,11 @@ with open('static/py/final_modle.sav', 'rb') as f:
 with open('static/py/input_scaler.sav', 'rb') as f: 
 	scaler=pickle.load(f)
 
-
+# connect to heroku database
 db_connection_string = "postgres://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
+
+# I was using a test db on my local machine to try inserting files
+# db_connection_string = 'postgresql://postgres:postgres@localhost:5432/testdb'
 engine = create_engine(db_connection_string)
 
 
@@ -24,25 +27,31 @@ app=Flask(__name__)
 def index():
 
     return render_template('index.html')
-    # return render_template('index.html') index.html has dropdown that takes you to form 
 
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # get value of input date from form
     input_date=request.form['trip-start']
-    # input_month=request.args.get('select1') #form['select1']
-    # input_day=request.form['select2']
-    # print(input_month)
-    # print(input_day)
+    # get timestamp now
+    now = datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+    # get zipcode from form
+    zip_code=request.form['zip_code']
+    # print(f'zip {zip_code}')
+    # print(now)
+    # print (input_date)
+    # print(current_time)
+    
+    # # inserting click data into db
 
-    # now = datetime.now()
-    # current_time=now.strftime("%H:%M:%S")
-    #get time.now
-    # get zipcode
+    # create string of SQL insert statement using user input from index.html
+    # query = (f'INSERT INTO user_info (utc_now, input_date, zip_code) VALUES ({now}, {input_date}, {zip_code})')
+
+    # execute query
+    # engine.execute(str(query))
     
-    # inserting click data into db
-    # engine.execute(f'INSERT into table VALUES ({input_date}, {time.now()},{zipcode})
-    
+
+    #
     # print(input_date)
     yyyy, mm, dd = input_date.split("-")
     # print(yyyy)
@@ -59,12 +68,14 @@ def predict():
             input_array=[]
             # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
             # print(rowproxy['station_name'])
+            
+            # pull variables for final json object
             station_name=rowproxy['station_name']
             lat=rowproxy['lat']
             lon=rowproxy['long']
             elevation=rowproxy['elevation']
 
-            # can add all other variables here. 
+            # pull variables for machine learning model input 
             sd_sod=rowproxy['snow_depth_start_of_day']# 'Snow Depth (in) Start of Day Values'
             # print(f'snow depth {sd_sod}')
             air_temp=rowproxy['air_temp_avg']# 'Air Temperature Observed (degF) Start of Day Values'
@@ -75,15 +86,16 @@ def predict():
             # input_array.append(sd_sod)
             input_array.append(air_temp)
             input_array.append(swq_sod)
-
             # print(input_array)
-            # feed variables through ml model
+            
 
+            # feed variables through ml model
             scaled_input=scaler.transform([input_array])
             # print(scaled_input)
             output=knn.predict(scaled_input)
             # print(f'station:{sn} , input: {input_array}, output:{output}')
 
+            # Create dictionary object with prediction and relevant info
             station_dict = {"station_name":station_name,
                             "predicted_snow": output[0], 
                             "lat": lat,
@@ -94,7 +106,14 @@ def predict():
 
     # print(output_array)
     # return jsonify(['hi'])
-    return jsonify(output_array)
+    # return jsonify(output_array)
+    print('Machine learning prediction complete')
+    # write json object to file
+    with open('static/output/ml_predict_output.json', 'w') as outfile:
+        json.dump(output_array, outfile)
+
+    # print(output_array[0])
+    return redirect("/", code=302)
 
 
 
