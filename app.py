@@ -17,8 +17,10 @@ import pickle
 with open('static/py/rf_range_model_3.sav', 'rb') as f: 
     rf=pickle.load(f)
 
+# connect to aws database
+db_connection_string='postgresql://myPostgresDB:postgres@database-1.cmqf4nuaacji.us-east-2.rds.amazonaws.com:5432/postgres'
 # connect to heroku database
-db_connection_string = "postgresql://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
+# db_connection_string = "postgresql://mnaxahwxxlsupb:82ba661b23abc055281f8b75926dee77b960380953d91b0529fe16e0ed78f832@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dajiaraierf0ld"
 
 
 engine = create_engine(db_connection_string)
@@ -64,7 +66,9 @@ def predict():
     date_val = date(int(yyyy), int(mm), int(dd))
     day_of_year = date_val.strftime('%j')
     # print(request.form)
-    resultproxy = engine.execute(f'SELECT * FROM station_means_full_list where dates={day_of_year}')
+    # resultproxy = engine.execute(f'SELECT * FROM station_means_full_list where dates={day_of_year}')
+    resultproxy = engine.execute(f'SELECT * FROM snow_means_table where dates={day_of_year}')
+
 
     # create a blank array where we will append a dict for each station 
     output_array=[]
@@ -76,8 +80,8 @@ def predict():
         row_array=rowproxy.values()
 
         # without change in snow depth
-        input_array=row_array[1:7]+row_array[10:23]
-
+        input_array=row_array[1:5]+row_array[6:8]+row_array[10:]
+        print(len(input_array))
         # includes change in snow depth
         # input_array=row_array[1:8]+row_array[10:23]
         # print(new_array)
@@ -91,7 +95,8 @@ def predict():
         # print(station_name)
         # print(lat)
         # print(lon)
-                
+
+     
         # feed input array through ml model
 
         # If using KNN model, must scale input array
