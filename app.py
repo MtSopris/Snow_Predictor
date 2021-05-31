@@ -39,25 +39,25 @@ def predict():
     now = datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
     # get value of input data from form
     input_date=request.form['trip-start']
-    zip_code=request.form['zip_code']
-    dream=request.form['dream']
-    planned=request.form['planned']
-    activity=request.form['activity']
-    # print(f'zip {zip_code}')
-    # print(now)
-    # print (input_date)
-    # print(current_time)
+    # zip_code=request.form['zip_code']
+    # dream=request.form['dream']
+    # planned=request.form['planned']
+    # activity=request.form['activity']
+    # # print(f'zip {zip_code}')
+    # # print(now)
+    # # print (input_date)
+    # # print(current_time)
     
-    # # inserting click data into db
-    # create a dictionary of click data
-    new_input={'utc_now': now,
-               'input_date': input_date,
-               'zip_code': zip_code, 
-               'dream': dream, 
-               'planned': planned, 
-               'activity': activity}
-    session.add(User_Info(**new_input)) #User_Info(utc_now=now, input_date=input_date, '...)
-    session.commit()
+    # # # inserting click data into db
+    # # create a dictionary of click data
+    # new_input={'utc_now': now,
+    #            'input_date': input_date,
+    #            'zip_code': zip_code, 
+    #            'dream': dream, 
+    #            'planned': planned, 
+    #            'activity': activity}
+    # session.add(User_Info(**new_input)) #User_Info(utc_now=now, input_date=input_date, '...)
+    # session.commit()
   
     # turn input_date into day of year for ML model (1-366 value)
     yyyy, mm, dd = input_date.split("-")
