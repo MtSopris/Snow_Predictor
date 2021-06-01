@@ -34,7 +34,7 @@ d3.json(snow_url, function(snowData){
       },
       //A Function defining how GeoJSON points spawn Leaflet layers.
     // It is internally called when data is added, passing the GeoJSON point feature and its LatLng. 
-    pointToLayer(station1,latlng){
+    pointToLayer(feature,latlng){
       return new L.circle(latlng,
         {
         fillOpacity: .50,
@@ -114,33 +114,9 @@ d3.json(snow_url, function(snowData){
       else {
         return "#99FF33"}
 
-   // function snowColors(predicted_snow){
-   //    if (predicted_snow='5ft-28ft'){
-   //      return '#000000'}
-   //    else if (predicted_snow='2ft-5ft'){
-   //      return "#FF3300"}
-   //    else if (predicted_snow='12in-24in'){
-   //      return "#FF0066"}
-   //    else if (predicted_snow='6in-12in'){
-   //      return "#CC00FF"}
-   //    else if (predicted_snow='3in-6in'){
-   //      return "#99FF33"}
-   //    else if (predicted_snow='0in-3in'){
-   //      return "#66FFFF"}
-   //    else if (predicted_snow='melting 3in-0in'){
-   //      return "#FF99FF"}
-   //    else if (predicted_snow='melting 6in-3in'){
-   //      return "#FF3300"}
-   //    else if (predicted_snow='melting 12in-6in'){
-   //      return "#FF0066"}
-   //    else if (predicted_snow='melting 5ft-1ft'){
-   //      return "#CC00FF"}
-   //    else {
-   //      return "#99FF33"}
-
     };
 
-    // function snowRadius(snow_bins[feature['properties']['snow_prediction']]) {
-    //   return snow_bins[feature['properties']['snow_prediction']] *1000;
-    // }
+    function snowRadius(snow_bins[feature['properties']['snow_prediction']]) {
+      return snow_bins[feature['properties']['snow_prediction']] *1000;
+    };
 });
