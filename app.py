@@ -67,6 +67,8 @@ def predict():
     # Create ML input array with historical values based on the date
     # create a blank array where we will append a dict for each station 
     output_array=[]
+    return_json={'type': 'FeatureCollection', 
+                 'features': []}
     for rowproxy in resultproxy:
         # print(rowproxy.items)
 
@@ -97,23 +99,32 @@ def predict():
         # print(f'station:{station_name} , input: {input_array}, output:{output}')
 
         # Create dictionary object with prediction and relevant station info
-        station_dict = {"station_name":station_name,
-                        "day_of_year":input_array[0],
-                        "predicted_snow": output[0], 
-                        "lat": lat,
-                        "lon": lon,
-                        "elevation": elevation}
+        station_dict={'type': 'Feature', 
+                      'geometry': {'type': 'Point', 
+                                   'coordinates': [lon, lat]}, 
+                      'properties': {'station_name': station_name, 
+                                     'day_of_year': input_array[0], 
+                                     'predicted_snow': output[0], 
+                                     'elevation': elevation}}
+
+        # station_dict = {"station_name":station_name,
+        #                 "day_of_year":input_array[0],
+        #                 "predicted_snow": output[0], 
+        #                 "lat": lat,
+        #                 "lon": lon,
+        #                 "elevation": elevation}
         # print(station_dict)
 
         # append station dict to output array
-        output_array.append(station_dict)
+        return_json['features'].append(station_dict)
 
 
     print('Machine learning prediction complete')
 
     # write json object (list of station dictionaries) to file
     with open('static/output/ml_predict_output.json', 'w') as outfile:
-        json.dump(output_array, outfile)
+        # json.dump(output_array, outfile)
+        json.dump(return_json, outfile)
 
 
     # redirect user back to index.html for viewing map populated with ML output
