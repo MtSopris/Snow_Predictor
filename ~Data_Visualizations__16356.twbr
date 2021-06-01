@@ -1,0 +1,2478 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20211.21.0420.1112                               -->
+<workbook source-build='2021.1.1 (20211.21.0420.1112)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='Powderhounds_Data_Visualizations' path='/workbooks' revision='1.4' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='user_info (dajiaraierf0ld)' inline='true' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ec2-54-163-97-228.compute-1.amazonaws.com' name='postgres.044yzy31q7qwps1h41whs19wywuq'>
+            <connection authentication='username-password' class='postgres' dbname='dajiaraierf0ld' one-time-sql='' port='5432' server='ec2-54-163-97-228.compute-1.amazonaws.com' username='mnaxahwxxlsupb' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.044yzy31q7qwps1h41whs19wywuq' name='user_info' table='[public].[user_info]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='postgres.044yzy31q7qwps1h41whs19wywuq' name='user_info' table='[public].[user_info]' type='table' />
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>utc_now</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[utc_now]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>utc_now</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>input_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[input_date]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>input_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zip_code]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>zip_code</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dream</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[dream]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>dream</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>planned</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[planned]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>planned</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>activity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[activity]</local-name>
+            <parent-name>[user_info]</parent-name>
+            <remote-alias>activity</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user_info_4436D9E6614C40E496E507DC5B00AEA3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Activity (group) 1]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[activity]' new-bin='true'>
+          <bin default-name='false' value='&quot; Snowboarding&quot;'>
+            <value>&quot;snowboarding&quot;</value>
+            <value>&quot;Snowboarding&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Backcountry skiing&quot;'>
+            <value>&quot;backcountry skiing&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hiking&quot;'>
+            <value>&quot;hiking&quot;</value>
+            <value>&quot;Hiking&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Skiing &quot;'>
+            <value>&quot;Skiing&quot;</value>
+            <value>&quot;Skiing &quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Snowblading&quot;'>
+            <value>&quot;Snowblades &quot;</value>
+            <value>&quot;Snowblading&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Activity (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[activity]' new-bin='true'>
+          <bin default-name='false' value='&quot;Backcountry skiing&quot;'>
+            <value>&quot;backcountry&quot;</value>
+            <value>&quot;Backcountry&quot;</value>
+            <value>&quot;backcountry skiing&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hiking&quot;'>
+            <value>&quot;hiking&quot;</value>
+            <value>&quot;Hiking&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Skiing &quot;'>
+            <value>&quot;Skiing&quot;</value>
+            <value>&quot;Skiing &quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Snowblading&quot;'>
+            <value>&quot;Snowblades &quot;</value>
+            <value>&quot;Snowblading&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Snowboarding&quot;'>
+            <value>&quot;snowboarding&quot;</value>
+            <value>&quot;Snowboarding&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Dream (group) 1]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat &quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Dream (group) 2]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat &quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Dream (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat &quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Planned (group) 1]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+          <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+            <value>&quot;Cooper&quot;</value>
+            <value>&quot;Ski Cooper&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Vail&quot;'>
+            <value>&quot;vail&quot;</value>
+            <value>&quot;Vail&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Planned (group) 2]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+          <bin default-name='false' value='&quot;Copper Mountain&quot;'>
+            <value>&quot;Copper&quot;</value>
+            <value>&quot;Copper Mountain&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+            <value>&quot;Cooper&quot;</value>
+            <value>&quot;Ski Cooper&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Vail&quot;'>
+            <value>&quot;vail&quot;</value>
+            <value>&quot;Vail&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Planned (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+          <bin default-name='false' value='&quot;Copper Mountain&quot;'>
+            <value>&quot;Copper&quot;</value>
+            <value>&quot;Copper Mountain&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+            <value>&quot;Cooper&quot;</value>
+            <value>&quot;Ski Cooper&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+            <value>&quot;Steamboat&quot;</value>
+            <value>&quot;Steamboat Springs&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Vail&quot;'>
+            <value>&quot;vail&quot;</value>
+            <value>&quot;Vail&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+      <column caption='Activity' datatype='string' name='[activity]' role='dimension' type='nominal' />
+      <column caption='Dream' datatype='string' name='[dream]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Input Date' datatype='string' name='[input_date]' role='dimension' type='nominal' />
+      <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+      <column caption='Utc Now' datatype='string' name='[utc_now]' role='dimension' type='nominal' />
+      <column caption='Zip Code' datatype='string' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+      <column-instance column='[zip_code]' derivation='Attribute' name='[attr:zip_code:nk]' pivot='key' type='nominal' />
+      <column-instance column='[activity]' derivation='None' name='[none:activity:nk]' pivot='key' type='nominal' />
+      <column-instance column='[dream]' derivation='None' name='[none:dream:nk]' pivot='key' type='nominal' />
+      <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+      <column-instance column='[zip_code]' derivation='None' name='[none:zip_code:nk]' pivot='key' type='nominal' />
+      <group hidden='true' name='[Exclusions (Activity (group) 1,Planned)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Activity (group) 1]' />
+          <groupfilter function='level-members' level='[none:planned:nk]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/carua.DESKTOP-4FTJ629/OneDrive/Desktop/projects/BootCamp Working/Project-3/Snow_Predictor/user_info_data.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>user_info</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>153</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>utc_now</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[utc_now]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>utc_now</remote-alias>
+              <ordinal>1</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>153</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>input_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[input_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>input_date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>80</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zip_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>zip_code</remote-alias>
+              <ordinal>3</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>80</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dream</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[dream]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>dream</remote-alias>
+              <ordinal>4</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>planned</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[planned]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>planned</remote-alias>
+              <ordinal>5</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>activity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[activity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>activity</remote-alias>
+              <ordinal>6</ordinal>
+              <family>user_info</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:dream:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Leadville&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Breckenridge&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Steamboat &quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Monarch&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arapahoe Basin&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Winter Park&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Crested Butte&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Steamboat Springs&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Telluride&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Wolf Creek&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Ski Cooper&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Gunnison&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aspen&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Vail&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Steamboat&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Beaver Creek&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:planned:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Copper Mountain&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Winter Park&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Berthoud Pass&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Loveland&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Crested Butte&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Breckenridge&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Vail&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arapahoe Basin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Wolf Creek&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Steamboat Springs&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Cooper&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Monarch&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ski Cooper&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Telluride&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;vail&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Eldora&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aspen&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Steamboat&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Keystone&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Beaver Creek&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:zip_code:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;14985&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;31684&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;64823&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;80482&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;02474&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;19713&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;47&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;52417&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;80218&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;13848&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;24892&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;56841&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;80352&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;16479&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;34921&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;68465&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;90210&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;15481&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;32158&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;67438&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;84635&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;14221&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;26586&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;58434&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;80401&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;18946&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;43585&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;75040&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;05730&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;21894&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;54786&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;80231&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;18512&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;38468&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;75030&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;98621&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;14228&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;27496&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;58465&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;80413&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;16516&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;35168&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;71650&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;97128&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;16845&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;35185&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;73542&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;97504&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;18562&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;42695&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;75039&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;98732&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;19421&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;46842&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;78213&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;15741&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;32633&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;68461&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;85932&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;14454&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;28463&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;60632&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;80442&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;12384&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;24584&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;55165&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;80302&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;18509&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;37561&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;75017&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;97582&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;15792&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;34864&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;68463&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;87531&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;13012&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;24856&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;56468&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;80320&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Activity (group)]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Skiing in my jeans&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Backcountry skiing&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;hiking&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Snowblading&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Snow bike&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Hiking&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Backcountry&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Snowshoeing&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Skiing&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;snowboarding&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Snowboarding&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Snow Tubing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Skiing &quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;backcountry&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Snowmobiling&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Snowblades &quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;backcountry skiing&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Planned (group) 2]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Copper Mountain&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Winter Park&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Berthoud Pass&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Loveland&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Crested Butte&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Breckenridge&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Vail&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arapahoe Basin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Wolf Creek&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Steamboat Springs&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Cooper&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Monarch&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ski Cooper&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Telluride&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;vail&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Eldora&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aspen&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Steamboat&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Keystone&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Beaver Creek&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Dream (group) 2]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Leadville&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Breckenridge&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Steamboat &quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Monarch&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arapahoe Basin&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Winter Park&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Crested Butte&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Steamboat Springs&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Telluride&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Wolf Creek&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Ski Cooper&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Gunnison&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aspen&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Vail&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Steamboat&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Beaver Creek&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:zip_code:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;14985&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;31684&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;64823&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;80482&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;02474&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;19713&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;47&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;52417&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;80218&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%many-values%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;13848&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;24892&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;56841&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;80352&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;16479&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;34921&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;68465&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;90210&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;15481&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;32158&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;67438&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;84635&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;14221&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;26586&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;58434&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;80401&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;18946&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;43585&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;75040&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;05730&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;21894&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;54786&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;80231&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;18512&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;38468&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;75030&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;98621&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;14228&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;27496&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;58465&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;80413&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;16516&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;35168&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;71650&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;97128&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;16845&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;35185&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;73542&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;97504&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;18562&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;42695&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;75039&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;98732&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;19421&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;46842&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;78213&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;15741&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;32633&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;68461&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;85932&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;14454&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;28463&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;60632&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;80442&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;12384&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;24584&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;55165&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;80302&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;18509&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;37561&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;75017&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;97582&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;15792&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;34864&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;68463&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;87531&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;13012&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;24856&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;56468&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;80320&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:activity:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Skiing in my jeans&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;hiking&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Snowblading&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Snow bike&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Hiking&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;backcountry&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Snowshoeing&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Skiing&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;snowboarding&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Snowboarding&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Snow Tubing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Skiing &quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Backcountry&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Snowmobiling&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Snowblades &quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;backcountry skiing&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Activity (group) 1]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Skiing in my jeans&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;hiking&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Snowblading&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Snow bike&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Hiking&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;hiking &amp; Hiking&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;backcountry&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Snowshoeing&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Skiing&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;snowboarding&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Snowboarding&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Skiing &amp; Skiing &quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot; Snowboarding&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Snow Tubing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Skiing &quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Backcountry&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Snowmobiling&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Snowblades &quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Snowblades  &amp; Snowblading&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Backcountry skiing&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='user_info' id='user_info_4436D9E6614C40E496E507DC5B00AEA3'>
+            <properties context=''>
+              <relation connection='postgres.044yzy31q7qwps1h41whs19wywuq' name='user_info' table='[public].[user_info]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Activities'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Popular Activities</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Activity (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[activity]' new-bin='true'>
+                <bin default-name='false' value='&quot;Backcountry skiing&quot;'>
+                  <value>&quot;backcountry&quot;</value>
+                  <value>&quot;Backcountry&quot;</value>
+                  <value>&quot;backcountry skiing&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Hiking&quot;'>
+                  <value>&quot;hiking&quot;</value>
+                  <value>&quot;Hiking&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Skiing &quot;'>
+                  <value>&quot;Skiing&quot;</value>
+                  <value>&quot;Skiing &quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Snowblading&quot;'>
+                  <value>&quot;Snowblades &quot;</value>
+                  <value>&quot;Snowblading&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Snowboarding&quot;'>
+                  <value>&quot;snowboarding&quot;</value>
+                  <value>&quot;Snowboarding&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column caption='Activity' datatype='string' name='[activity]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group)]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Activity (group)]' />
+              <groupfilter function='member' level='[Activity (group)]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' />
+              <color column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' />
+              <text column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1EF8DBCC-0B76-4885-9C5D-233829A5507E}' />
+    </worksheet>
+    <worksheet name='Activity by Destination'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Activity at Top 10 Destinations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Activity (group) 1]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[activity]' new-bin='true'>
+                <bin default-name='false' value='&quot; Snowboarding&quot;'>
+                  <value>&quot;snowboarding&quot;</value>
+                  <value>&quot;Snowboarding&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Backcountry skiing&quot;'>
+                  <value>&quot;backcountry skiing&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Hiking&quot;'>
+                  <value>&quot;hiking&quot;</value>
+                  <value>&quot;Hiking&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Skiing &quot;'>
+                  <value>&quot;Skiing&quot;</value>
+                  <value>&quot;Skiing &quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Snowblading&quot;'>
+                  <value>&quot;Snowblades &quot;</value>
+                  <value>&quot;Snowblading&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column caption='Activity' datatype='string' name='[activity]' role='dimension' type='nominal' />
+            <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+            <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Exclusions (Activity (group) 1,Planned)]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[Activity (group) 1]' />
+                <groupfilter function='level-members' level='[none:planned:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[Activity (group) 1]' member='&quot;&quot;' />
+                <groupfilter function='member' level='[none:planned:nk]' member='&quot;Copper Mountain&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([planned])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:planned:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]</column>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Exclusions (Activity (group) 1,Planned)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group) 1]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]</rows>
+        <cols>([federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk] / [federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group) 1])</cols>
+      </table>
+      <simple-id uuid='{417B0BE6-D307-4B28-B6F7-CD6E6D750B79}' />
+    </worksheet>
+    <worksheet name='Dream Bar Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Dream Vacation Bar Chart</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Dream (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat &quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column caption='Dream' datatype='string' name='[dream]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Dream (group)]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Dream (group)]' />
+              <groupfilter function='member' level='[Dream (group)]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Dream (group)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Dream (group)]</rows>
+        <cols>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]</cols>
+      </table>
+      <simple-id uuid='{C80ED440-8FDA-4767-983E-F6ABA81AFF18}' />
+    </worksheet>
+    <worksheet name='Dreamed by ZIP Code'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Dream Vacations by ZIP Code</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Dream (group) 1]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat &quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column caption='Dream' datatype='string' name='[dream]' role='dimension' type='nominal' />
+            <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+            <column-instance column='[zip_code]' derivation='None' name='[none:zip_code:nk]' pivot='key' type='nominal' />
+            <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+            <column caption='Zip Code' datatype='string' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:planned:nk]' />
+              <groupfilter function='member' level='[none:planned:nk]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' />
+              <lod column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:zip_code:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Dream (group) 1]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{6B8E4E10-3CFF-455A-814E-3EE562A53D29}' />
+    </worksheet>
+    <worksheet name='Dreamed vs Planned'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Dream Vacations vs Planned Destinations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Dream (group) 2]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[dream]' new-bin='true'>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat &quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Planned (group) 2]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+                <bin default-name='false' value='&quot;Copper Mountain&quot;'>
+                  <value>&quot;Copper&quot;</value>
+                  <value>&quot;Copper Mountain&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+                  <value>&quot;Cooper&quot;</value>
+                  <value>&quot;Ski Cooper&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Vail&quot;'>
+                  <value>&quot;vail&quot;</value>
+                  <value>&quot;Vail&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column caption='Dream' datatype='string' name='[dream]' role='dimension' type='nominal' />
+            <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+            <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:planned:nk]' />
+              <groupfilter function='member' level='[none:planned:nk]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1sm3erm0lexqah15gx1ra06mwfu0].[Dream (group) 2] / [federated.1sm3erm0lexqah15gx1ra06mwfu0].[Planned (group) 2])</rows>
+        <cols>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]</cols>
+      </table>
+      <simple-id uuid='{F623B58D-F6C8-4594-B3F1-E0B5DD7DF22C}' />
+    </worksheet>
+    <worksheet name='Planned Bar Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Planned Vacation Bar Chart</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Planned (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+                <bin default-name='false' value='&quot;Copper Mountain&quot;'>
+                  <value>&quot;Copper&quot;</value>
+                  <value>&quot;Copper Mountain&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+                  <value>&quot;Cooper&quot;</value>
+                  <value>&quot;Ski Cooper&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Vail&quot;'>
+                  <value>&quot;vail&quot;</value>
+                  <value>&quot;Vail&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+            <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:planned:nk]' />
+              <groupfilter function='member' level='[none:planned:nk]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Planned (group)]</rows>
+        <cols>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]</cols>
+      </table>
+      <simple-id uuid='{751DAAE0-7B4E-4469-A4F8-656B00FDE960}' />
+    </worksheet>
+    <worksheet name='Planned by ZIP Code'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Planned Destinations by ZIP Code</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <column datatype='string' name='[Planned (group) 1]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[planned]' new-bin='true'>
+                <bin default-name='false' value='&quot;Ski Cooper&quot;'>
+                  <value>&quot;Cooper&quot;</value>
+                  <value>&quot;Ski Cooper&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Steamboat Springs&quot;'>
+                  <value>&quot;Steamboat&quot;</value>
+                  <value>&quot;Steamboat Springs&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Vail&quot;'>
+                  <value>&quot;vail&quot;</value>
+                  <value>&quot;Vail&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[planned]' derivation='None' name='[none:planned:nk]' pivot='key' type='nominal' />
+            <column-instance column='[zip_code]' derivation='None' name='[none:zip_code:nk]' pivot='key' type='nominal' />
+            <column caption='Planned' datatype='string' name='[planned]' role='dimension' type='nominal' />
+            <column caption='Zip Code' datatype='string' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:planned:nk]' />
+              <groupfilter function='member' level='[none:planned:nk]' member='&quot;&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:planned:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' />
+              <lod column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:zip_code:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Planned (group) 1]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{4493314D-92E7-469A-B442-0E4549C10D9A}' />
+    </worksheet>
+    <worksheet name='Visitor Home Locations'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Visitor Home Locations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_info (dajiaraierf0ld)' name='federated.1sm3erm0lexqah15gx1ra06mwfu0' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1sm3erm0lexqah15gx1ra06mwfu0'>
+            <_.fcp.ObjectModelTableType.false...column caption='user_info' datatype='integer' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='user_info' datatype='table' name='[__tableau_internal_object_id__].[user_info_4436D9E6614C40E496E507DC5B00AEA3]' role='measure' type='quantitative' />
+            <column-instance column='[zip_code]' derivation='None' name='[none:zip_code:nk]' pivot='key' type='nominal' />
+            <column caption='Zip Code' datatype='string' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' />
+              <lod column='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[none:zip_code:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Latitude (generated)]</rows>
+        <cols>[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{1A6C918C-365F-4CD6-85BA-7265C1C3F19E}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Activities Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='10' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='13' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='11' w='82400' x='800' y='1000'>
+              <zone h='49000' id='9' name='Activities' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='15' name='Activity by Destination' w='82400' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98000' id='12' is-fixed='true' param='vert' w='16000' x='83200' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='14' name='Activities' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='28250' id='16' name='Activity by Destination' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group) 1]' w='16000' x='83200' y='9125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='38' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='37' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='9' is-fixed='true' name='Activities' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='14' name='Activities' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='15' is-fixed='true' name='Activity by Destination' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='28250' id='16' name='Activity by Destination' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group) 1]' w='16000' x='83200' y='9125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{55E629F1-753D-4064-87C2-699E41E61ECE}' />
+    </dashboard>
+    <dashboard name='Destinations by ZIP Code Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='5' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Visitor Home Locations' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' w='16000' x='83200' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='15750' id='8' name='Visitor Home Locations' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='63500' id='9' name='Planned by ZIP Code' w='16000' x='83200' y='16750'>
+                <layout-cache fixed-size-h='500' fixed-size-w='153' type-h='fixed' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Planned by ZIP Code' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='80250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='40' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='39' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Visitor Home Locations' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='15750' id='8' name='Visitor Home Locations' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='63500' id='9' is-fixed='true' name='Planned by ZIP Code' w='16000' x='83200' y='16750'>
+                  <layout-cache fixed-size-h='500' fixed-size-w='153' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Planned by ZIP Code' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='16000' x='83200' y='80250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FC5C51B5-F4E1-4C3C-8EC6-55660A4F8885}' />
+    </dashboard>
+    <dashboard name='Dream vs Planned Vacation Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='9' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='7' w='65800' x='800' y='1000'>
+              <zone h='49000' id='3' name='Dream Bar Chart' w='32900' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='5' name='Planned Bar Chart' w='32900' x='33700' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='6' name='Planned by ZIP Code' w='32900' x='33700' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' name='Dreamed by ZIP Code' w='32900' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='326' h='98000' id='8' is-fixed='true' param='vert' w='32600' x='66600' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Planned by ZIP Code' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='32600' x='66600' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='89875' id='14' name='Dreamed vs Planned' w='32600' x='66600' y='9125'>
+                <layout-cache fixed-size-h='1647' minwidth='302' type-h='fixed' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1550' minheight='1550' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='42' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='41' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='3' is-fixed='true' name='Dream Bar Chart' w='32900' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='5' is-fixed='true' name='Planned Bar Chart' w='32900' x='33700' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='89875' id='14' is-fixed='true' name='Dreamed vs Planned' w='32600' x='66600' y='9125'>
+                  <layout-cache fixed-size-h='1647' minwidth='302' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='11' is-fixed='true' name='Dreamed by ZIP Code' w='32900' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='6' is-fixed='true' name='Planned by ZIP Code' w='32900' x='33700' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Planned by ZIP Code' pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' w='32600' x='66600' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{4A20C1E2-0171-4955-9A00-80F9C18F7F21}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' name='Destinations by ZIP Code Dashboard'>
+      <viewpoints>
+        <viewpoint name='Planned by ZIP Code' />
+        <viewpoint name='Visitor Home Locations'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{835542A1-0184-4F6D-9499-0029659C17B7}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dream vs Planned Vacation Dashboard'>
+      <viewpoints>
+        <viewpoint name='Dream Bar Chart' />
+        <viewpoint name='Dreamed by ZIP Code' />
+        <viewpoint name='Dreamed vs Planned' />
+        <viewpoint name='Planned Bar Chart' />
+        <viewpoint name='Planned by ZIP Code' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{F8659966-89E5-4791-AFAB-EDAD7E38B781}' />
+    </window>
+    <window class='dashboard' name='Activities Dashboard'>
+      <viewpoints>
+        <viewpoint name='Activities' />
+        <viewpoint name='Activity by Destination'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{2D9AB923-EF86-4580-9000-543B178C8E31}' />
+    </window>
+    <window class='worksheet' name='Visitor Home Locations'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8CBC6CE0-C4C7-4405-AA9A-F72D5DFBEF34}' />
+    </window>
+    <window class='worksheet' name='Dream Bar Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{128AFFB2-A5CC-447E-A13E-DB7129879B67}' />
+    </window>
+    <window class='worksheet' name='Planned Bar Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F0BF8E4D-D4B7-4541-9DA1-D5200501660D}' />
+    </window>
+    <window class='worksheet' name='Planned by ZIP Code'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BAFB23BF-E4D1-4F52-8BE0-F41CCF4F0A32}' />
+    </window>
+    <window class='worksheet' name='Dreamed by ZIP Code'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{06538192-28F6-489B-A48F-3B8D981FB228}' />
+    </window>
+    <window class='worksheet' name='Dreamed vs Planned'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6C69AA9-3855-43A7-8F89-CAA40AD91293}' />
+    </window>
+    <window class='worksheet' name='Activities'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[__tableau_internal_object_id__].[cnt:user_info_4436D9E6614C40E496E507DC5B00AEA3:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CCAA81B4-337E-4BBF-A551-36430E8565B3}' />
+    </window>
+    <window class='worksheet' name='Activity by Destination'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1sm3erm0lexqah15gx1ra06mwfu0].[Activity (group) 1]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A474CCE1-5FAF-4D14-86BC-A88D1A6AB887}' />
+    </window>
+  </windows>
+</workbook>
