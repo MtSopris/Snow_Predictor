@@ -22,39 +22,101 @@ streetMap.addTo(myMap);
 // var snow_url='http://127.0.0.1:5000/output' //change to actual prediction
 var snow_url='../static/output/ml_predict_output.json' //hard code location for now
 
-//start d3.json
-d3.json(snow_url).then ((response=>{
-  //console.log to see response
-  // console.log(response)
+d3.json(snow_url, function(snowData){
+  createFeatures(snowData.features);
+//using the d3.json data, create function to bind pop, and add circle layer
+  function createFeatures(snowData){
+    var snowfall = L.geoJson(snowData,{
+      //use onEachFeature function to bind popup/data to each created feature
+      onEachFeature(feature,layer){
+        layer.bindPopup("<h2> Location: "+ feature.properties.station_name +"</h2> <hr> <h2> Elevation: " 
+        + feature.properties.elevation +"</h2> <hr> <h2> Powder Prediction:" + feature.properties.predicted_snow)+"</h2>";
+      },
+      //A Function defining how GeoJSON points spawn Leaflet layers.
+    // It is internally called when data is added, passing the GeoJSON point feature and its LatLng. 
+    pointToLayer(feature,latlng){
+      return new L.circle(latlng,
+        {
+        fillOpacity: .50,
+        fillColor: snowColors(snow_bins[feature['properties']['snow_prediction']]),// snowColors(snow_bins[station1['properties']['snow_prediction']]) // snowColors(6)||| station1 => {type: , geometry, properties}
+        color: "#000000",
+        radius: snowRadius(snow_bins[feature['properties']['snow_prediction']]),
+        stroke: true,
+        weight: 0.5 
+        })
+        }
+    }).addTo(myMap);
 
-  var heatArray = []
-    response.forEach(function(one_station) {
-      // console.log(one_station.lat)
-      heatArray.push([one_station.lat, one_station.lon, one_station.predicted_snow])
-    })
-    // console.log(heatArray)
+  //setup the legend
+  var legend = new L.control({position: "bottomright"});
 
-  //create empty list
-//   var heatArray=[]
-//   //start for loop
-//   for(var i=0; i< response.length; i++) {
-//     // not sure if best to use response[i] or reponse[i].station_name
-//     var stationSelected = response[i].station_name;
-// // added "predicted_snow"as the 3rd variable to give heat map a scale
-//     if(stationSelected){
-//       heatArray.push([station_name.lat,station_name.lon, station_name.predicted_snow]);
-//     }
-//   }
+  legend.onAdd=function(myMap){
+    var div=L.DomUtil.create("div","info legend");
+    //using bin values from labels in snowlevels
+    var snow_bins={'5ft-28ft': 6, 
+                   '2ft-5ft': 5, 
+                   '12in-24in': 4, 
+                   '6in-12in': 3, 
+                   '3in-6in': 2, 
+                   '0in-3in': 1, 
+                   'melting 3in-0in': -1, 
+                   'melting 6in-3in': -2, 
+                   'melting 12in-6in': -3, 
+                   'melting 5ft-1ft': -4,
+                   'melting 28ft-5ft':-5}
 
-  var heat = L.heatLayer(heatArray,{
-          radius: 100,
-          blur: 35,
-          maxIntensity: 88,
-          opacity: 1,
-          // dissipating: True
-    }).addTo(myMap)
-}))
+    var snowlevels = [-5,-4,-3,-2,-1,1,2,3,4,5,6];
+    var colors=["#99FF33","#CC00FF","#FF0066","#FF3300","#FF99FF","#66FFFF","#99FF33","#CC00FF","#FF0066","#FF3300","#000000"];
+    var labels=[];
 
-// var heatArray = []
-//     data.forEach(function(one_sale) {
-//         heatArray.push([one_sale.lat, one_sale.lng, one_sale.num])
+    //Add legend header and markers
+    var legendInfo="<h3>Legend</h3>"+
+      "<div class=\"labels\>"+
+        "<div class=\"min\">"+snowlevels[0]+"</div>"+
+        "<div class=\"max\">"+snowlevels[snowlevels.length-1]+"</div>"+
+      "</div>";
+
+    div.innerHTML=legendInfo;
+
+    snowlevels.forEach(function(snowlevel,index){
+      labels.push("< i style=\"background:"+colors[index]+"\"></i>");
+      console.log(snowlevel);
+      console.log(index);
+    });
+
+    div.innerHTML += "<ul>"+labels.join(" ")+"<ul>";
+    return div;
+  };
+  //add legend to map
+  legend.addTo(myMap);
+};
+   function snowColors(predicted_snow){
+      if (predicted_snow=6){
+        return '#000000'}
+      else if (predicted_snow=5){
+        return "#FF3300"}
+      else if (predicted_snow=4){
+        return "#FF0066"}
+      else if (predicted_snow=3){
+        return "#CC00FF"}
+      else if (predicted_snow=2){
+        return "#99FF33"}
+      else if (predicted_snow=1){
+        return "#66FFFF"}
+      else if (predicted_snow=-1){
+        return "#FF99FF"}
+      else if (predicted_snow=-2){
+        return "#FF3300"}
+      else if (predicted_snow=-3){
+        return "#FF0066"}
+      else if (predicted_snow=-4){
+        return "#CC00FF"}
+      else {
+        return "#99FF33"}
+
+    };
+
+    function snowRadius(snow_bins[feature['properties']['snow_prediction']]) {
+      return snow_bins[feature['properties']['snow_prediction']] *1000;
+    };
+});
