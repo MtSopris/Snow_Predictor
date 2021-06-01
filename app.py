@@ -99,13 +99,13 @@ def predict():
         # print(f'station:{station_name} , input: {input_array}, output:{output}')
 
         # Create dictionary object with prediction and relevant station info
-        station_dict={'type': 'Feature', 
-                      'geometry': {'type': 'Point', 
-                                   'coordinates': [lon, lat]}, 
+        station_dict={'type': 'Feature',  
                       'properties': {'station_name': station_name, 
                                      'day_of_year': input_array[0], 
                                      'predicted_snow': output[0], 
-                                     'elevation': elevation}}
+                                     'elevation': elevation},
+                        'geometry': {'type': 'Point', 
+                                     'coordinates': [lon,lat]}}
 
         # station_dict = {"station_name":station_name,
         #                 "day_of_year":input_array[0],

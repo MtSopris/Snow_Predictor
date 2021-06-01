@@ -9,12 +9,12 @@ body{
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
-/*.map {
+.map {
   height: 80%;
   padding: 15;
   margin: 15;
   fill-outline-color:#000099;
-}*/
+}
 
 /*.center {
   display: block;
