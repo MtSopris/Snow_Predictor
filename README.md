@@ -24,26 +24,26 @@ This app utilizes machine learning to generate a prediction of daily snow fall f
 
 ## Installing Dependencies
 
-To install <Snow_Predictors>, follow libraries will be needed steps:
+To install <Snow_Predictors>, the following libraries will be needed:
 
 
-Python
+[Python](https://docs.python.org/3/)
 
-Matplotlib
+[Matplotlib](https://matplotlib.org/)
 
-Numpy
+[Numpy](https://numpy.org/doc/)
 
-Pandas
+[Pandas](https://pandas.pydata.org/docs/)
 
-Sqlalchemy
+[Sqlalchemy](https://docs.sqlalchemy.org/en/14/)
 
-SkLearn
+[SkLearn](https://scikit-learn.org/stable/)
 
-Datetime
+[Datetime](https://docs.python.org/3/library/datetime.html)
 
-Psycopg2
+[Psycopg2](https://pypi.org/project/psycopg2/)
 
-Flask
+[Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
 A [Mapbox](https://docs.mapbox.com/help/getting-started/) api key will need to be added to a config file with API_KEY as a variable file should be located in ../static/config/config.js
 
@@ -65,8 +65,8 @@ Thanks to the following people who have contributed to this project:
 
 ## Resources
 
-[Natural Resources Conservation Services] (https://wcc.sc.egov.usda.gov/reportGenerator/edit/customMultipleStationReport/daily/start_of_period/state=%22CO%22%20AND%20network=%22SNTLT%22,%22SNTL%22%20AND%20element=%22SNWD%22%20AND%20outServiceDate=%222100-01-01%22%7Cname/0,0/name,stationId,WTEQ::value,WTEQ::delta,SNWD::value,SNWD::delta?fitToScreen=false)
+[Natural Resources Conservation Services](https://wcc.sc.egov.usda.gov/reportGenerator/edit/customMultipleStationReport/daily/start_of_period/state=%22CO%22%20AND%20network=%22SNTLT%22,%22SNTL%22%20AND%20element=%22SNWD%22%20AND%20outServiceDate=%222100-01-01%22%7Cname/0,0/name,stationId,WTEQ::value,WTEQ::delta,SNWD::value,SNWD::delta?fitToScreen=false)
 
 
-[Amazon AWS] (https://aws.amazon.com/console/)
+[Amazon AWS](https://aws.amazon.com/console/)
 
