@@ -23,17 +23,29 @@ streetMap.addTo(myMap);
 var snow_url='../static/output/ml_predict_output.json' //hard code location for now
 console.log(snow_url)
 
-var snow_bins={'5ft-28ft': 11, 
-               '2ft-5ft': 10, 
-               '12in-24in': 9, 
-               '6in-12in': 8, 
-               '3in-6in': 7, 
-               '0in-3in': 6, 
-               'melting 3in-0in': 5, 
-               'melting 6in-3in': 4, 
-               'melting 12in-6in': 3, 
-               'melting 5ft-1ft': 2,
-               'melting 28ft-5ft':1}
+// var snow_bins={'5ft-28ft': 11, 
+//                '2ft-5ft': 10, 
+//                '12in-24in': 9, 
+//                '6in-12in': 8, 
+//                '3in-6in': 7, 
+//                '0in-3in': 6, 
+//                'melting 3in-0in': 5, 
+//                'melting 6in-3in': 4, 
+//                'melting 12in-6in': 3, 
+//                'melting 5ft-1ft': 2,
+//                'melting 28ft-5ft':1}
+
+var snow_bins={'5ft-28ft': 6, 
+               '2ft-5ft': 5, 
+               '12in-24in': 4, 
+               '6in-12in': 3, 
+               '3in-6in': 2, 
+               '0in-3in': 1, 
+               'melting 3in-0in': -1, 
+               'melting 6in-3in': -2, 
+               'melting 12in-6in': -3, 
+               'melting 5ft-1ft': -4,
+               'melting 28ft-5ft':-5}
 
 
 function styleInfo(feature){
@@ -48,35 +60,34 @@ function styleInfo(feature){
 }
 
 function snowRadius(predicted_snow) {
-  return Math.abs(predicted_snow) *5;
+  return Math.abs(predicted_snow) *15;
 };
-
-
 function snowColors(predicted_snow){
-  if (predicted_snow=11){
+  if (predicted_snow=6){
     return '#0000ff'}
-  else if (predicted_snow=10){
-    return "#4D004D"}
-  else if (predicted_snow=9){
-    return "#8C1AFF"}
-  else if (predicted_snow=8){
-    return "#000080"}
-  else if (predicted_snow=7){
-    return "#006666"}
-  else if (predicted_snow=6){
-    return "#008000"}
   else if (predicted_snow=5){
-    return "#608000"}
+    return "#4D004D"}
   else if (predicted_snow=4){
-    return "#FFFF00"}
+    return "#8C1AFF"}
   else if (predicted_snow=3){
-    return "#E65C00"}
+    return "#000080"}
   else if (predicted_snow=2){
+    return "#006666"}
+  else if (predicted_snow=1){
+    return "#008000"}
+  else if (predicted_snow=-1){
+    return "#608000"}
+  else if (predicted_snow=-2){
+    return "#FFFF00"}
+  else if (predicted_snow=-3){
+    return "#E65C00"}
+  else if (predicted_snow=-4){
     return "#990000"}
   else {
     return "#330000";
   };
 }
+
 
 d3.json(snow_url).then(data=>{
   console.log(data)
@@ -96,9 +107,10 @@ d3.json(snow_url).then(data=>{
       )
     }
   }).addTo(myMap)
+})
 
   //setup the legend
-  var legend= new L.control({position: "bottomright"});
+  // var legend= new L.control({position: "bottomright"});
 
   // legend.onAdd= function(myMap){
   //   //create div var using domUtil
@@ -138,7 +150,7 @@ d3.json(snow_url).then(data=>{
   //   return div;
   // };
   // legend.addTo(myMap);
-})
+// })
 
 // d3.json(snow_url, function(snowData){
 //   createFeatures(snowData.features);
@@ -206,6 +218,32 @@ d3.json(snow_url).then(data=>{
 //     return "#330000";
 //   };
 // }
+
+// function snowColors(predicted_snow){
+//   if (predicted_snow=11){
+//     return '#0000ff'}
+//   else if (predicted_snow=10){
+//     return "#4D004D"}
+//   else if (predicted_snow=9){
+//     return "#8C1AFF"}
+//   else if (predicted_snow=8){
+//     return "#000080"}
+//   else if (predicted_snow=7){
+//     return "#006666"}
+//   else if (predicted_snow=6){
+//     return "#008000"}
+//   else if (predicted_snow=5){
+//     return "#608000"}
+//   else if (predicted_snow=4){
+//     return "#FFFF00"}
+//   else if (predicted_snow=3){
+//     return "#E65C00"}
+//   else if (predicted_snow=2){
+//     return "#990000"}
+//   else {
+//     return "#330000";
+//   };
+
 
 // var snow_bins={'5ft-28ft': 6, 
 //                '2ft-5ft': 5, 
