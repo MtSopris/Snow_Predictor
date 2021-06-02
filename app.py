@@ -85,7 +85,7 @@ def predict():
         station_name=row_array[0]
         lat=row_array[8]
         lon=row_array[9]
-        elevation=input_array[5]
+        elevation=row_array[6]
         # print(f'input_array {input_array}')
         # print(station_name)
         # print(lat)
